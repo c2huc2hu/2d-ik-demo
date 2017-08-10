@@ -10,13 +10,19 @@
     <h1>Inverse Kinematics Demo</h1>
     <h2>Simple inverse kinematics on a two dimensional, two degree-of-freedom arm</h2>
     <svg height=500 width=500>
-      <rect id="end-effector" class="draggable" x=0 y=0 height=10 width=10></rect>
       <line id="segment1"></line>
-      <line id="segment2" stroke-width=3 stroke="black"></line>
+      <line id="segment2"></line>
+      <circle id="end-effector" class="draggable" r=10></circle>
     </svg>
 
-    <input type="range" id="slider1" value=100 min=50 max=200>
-    <input type="range" id="slider2" value=150 min=50 max=200>
+    <div class="row">
+      <input type="range" id="slider1" value=100 min=50 max=200>
+      <span id="label1"> </span>
+    </div>
+    <div class="row">
+      <input type="range" id="slider2" value=150 min=50 max=200>
+      <span id="label2"> </span>
+    </div>
   </body>
 
 </html>

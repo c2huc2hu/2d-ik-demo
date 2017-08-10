@@ -10,11 +10,40 @@ svg line#segment1 {
 }
 
 svg line#segment2 {
-  stroke: skyblue;
+  stroke: khaki;
   stroke-linecap: round;
-  stroke-width: 3;
+  stroke-width: 5;
 }
 
+/* Gripper */
 .draggable {
   cursor: move;
+}
+
+/* Slider */
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range] {
+  cursor: pointer;
+  height: 30px;
+  margin: 0;
+}
+.row {
+  height: 30px;
+  margin-top: 5px;
+}
+.row span {
+  display: inline-block;
+  vertical-align: top;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+span#label1 {
+  background-color: skyblue;
+}
+span#label2 {
+  background-color: khaki;
 }

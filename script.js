@@ -30,8 +30,8 @@ function render(angles, d1, d2) {
   seg2.setAttribute('y1', elbowY);
   seg2.setAttribute('x2', wristX);
   seg2.setAttribute('y2', wristY);
-  end.setAttribute('x', wristX - 5);
-  end.setAttribute('y', wristY - 5);
+  end.setAttribute('cx', wristX);
+  end.setAttribute('cy', wristY);
 }
 
 // Click and drag stuff
@@ -66,11 +66,12 @@ function moveEndEffector(event) {
 
 ///// MAIN STUFF
 var x = 100, y = 200;
-let d1 = 200, d2 = 300;
 
 function update() {
-  d1 = $('input#slider1').value;
-  d2 = $('input#slider2').value;
+  let d1 = $('input#slider1').value;
+  let d2 = $('input#slider2').value;
+  $('span#label1').textContent = d1;
+  $('span#label2').textContent = d2;
 
   let angles = ik_2d(x, y, d1, d2);
   render(angles, d1, d2);
