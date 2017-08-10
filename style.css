@@ -1,0 +1,20 @@
+svg {
+  position: relative;
+  border: solid 1px black;
+}
+
+svg line#segment1 {
+  stroke: skyblue;
+  stroke-linecap: round;
+  stroke-width: 5;
+}
+
+svg line#segment2 {
+  stroke: skyblue;
+  stroke-linecap: round;
+  stroke-width: 3;
+}
+
+.draggable {
+  cursor: move;
+}
