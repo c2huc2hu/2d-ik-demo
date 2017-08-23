@@ -25,7 +25,7 @@ Note that the position can be controlled directly, but the speed cannot.
 
 Question: How can speed be controlled at all?
 
-```Arduino
+```C++
 // Modified from Sweep.ino
 #include <Servo.h>
 
@@ -66,7 +66,9 @@ We will use this model of arm (two rotational degrees of freedom) because it can
 
 Your task is to construct an arm with the provided materials and to control it with inverse kinematics.
 You should take input from Serial to determine the position.
-These are the equations for the arm. They can be derived from the shape of the arm and the cosine law.
+These are the equations for the arm.
+They can be derived from the shape of the arm and the cosine law.
+`d1` is the length of the segment connected to the centre, `d2` is the length of the segment connected to the gripper.
 
 ![d = \sqrt{x^2 + y^2}\\
 \theta_1 = \arctan{\frac{y}{x}} \pm \arccos{\frac{d^2 + d_1^2 - d_2^2}{2 d d_1}} \\
@@ -77,7 +79,7 @@ These are the equations for the arm. They can be derived from the shape of the a
 {\color{White} \theta_2 = \arctan{\frac{y - d_1 \sin{\theta_1}}{x - d_1 \cos{\theta_1}}}}}
 -->
 
-### Hints:
+### Hint:
 
 Use atan2, not atan in your equations. This takes into account the signs.
 
