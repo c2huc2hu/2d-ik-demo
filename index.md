@@ -28,6 +28,7 @@ Question: How can speed be controlled at all?
 ```C++
 // Modified from Sweep.ino
 #include <Servo.h>
+#include <math.h>
 
 Servo myservo;  // create servo object to control a servo
 
@@ -35,6 +36,7 @@ int pos = 0;    // variable to store the servo position
 
 void setup()
 {
+  Serial.begin(9600);
   myservo.attach(9);  // attaches the servo on pin 9 to the servo object
 }
 
@@ -73,6 +75,13 @@ They can be derived from the shape of the arm and the cosine law.
 ![d = \sqrt{x^2 + y^2}\\
 \theta_1 = \arctan{\frac{y}{x}} \pm \arccos{\frac{d^2 + d_1^2 - d_2^2}{2 d d_1}} \\
 \theta_2 = \arctan{\frac{y - d_1 \sin{\theta_1}}{x - d_1 \cos{\theta_1}}}](equation.png)
+
+Note that theta2 is the distance from the second arm segment to the horizontal.
+The angle you should be feeding the second servo is `180 - theta1 + theta2`.
+
+These are all builtin Arduino functions (in the math library):
+`atan2`, `acos`, `sin`, `sqrt`, `sq`. Note that these return in radians, but the Servo functions take degrees.
+
 <!--
 {\color{White} d = \sqrt{x^2 + y^2}} \\
 {\color{White} \theta_1 = \arctan{\frac{y}{x}} \pm \arccos{\frac{d^2 + d_1^2 - d_2^2}{2 d d_1}}} \\
