@@ -9,8 +9,8 @@ They're programmed in a variant of C++ called Arduino. Documentation is [here](h
 Install the editor from [here](https://www.arduino.cc/en/Main/Software). Download this while you read the rest of this page.
 The functions you will need are:
 
-* `Serial.print`: Prints to console
-* `Serial.read`: Reads from console
+* `Serial.print` and `Serial.println`: Prints to console
+* `Serial.parseInt` and `Serial.parseFloat`: Reads from console
 * `Servo` methods (`attach`, `write`): See below
 * `delay`: Waits for the number in milliseconds
 
